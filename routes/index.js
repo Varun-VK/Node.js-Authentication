@@ -15,6 +15,7 @@ var User = mongoose.model('User', new Schema({
 	lastName : String,
 	email : {type : String, required : true},
 	password : String,
+  phone : Number,
 }));
 
 /* GET home page. */
@@ -32,6 +33,7 @@ router.post('/register', function(req, res, next) {
   	lastName : req.body.lastName,
   	email : req.body.email,
   	password : req.body.password,
+    phone : req.body.phone,
   });
 
   user.save(function(err){
